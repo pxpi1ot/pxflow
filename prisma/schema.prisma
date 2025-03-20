@@ -9,11 +9,7 @@ generator client {
 }
 
 datasource db {
-<<<<<<< HEAD
-  provider = "mongodb"
-=======
   provider = "postgresql"
->>>>>>> 20b38a6 (better-auth-nextjs 模板)
   url      = env("DATABASE_URL")
 }
 
