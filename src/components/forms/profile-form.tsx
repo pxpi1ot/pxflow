@@ -93,10 +93,10 @@ const ProfileForm = ({ }: Props) => {
           {isLoading ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Saving
+              保存中
             </>
           ) : (
-            'Save User Settings'
+            '保存用户设置'
           )}
         </Button>
       </form>

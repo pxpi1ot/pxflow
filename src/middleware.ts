@@ -12,6 +12,7 @@ export default async function authMiddleware(request: NextRequest) {
   const isPasswordRoute = passwordRoutes.includes(pathName);
   const isAdminRoute = adminRoutes.includes(pathName);
 
+
   const { data: session } = await betterFetch<Session>(
     "/api/auth/get-session",
     {
@@ -28,6 +29,11 @@ export default async function authMiddleware(request: NextRequest) {
       return NextResponse.next();
     }
     return NextResponse.redirect(new URL("/sign-in", request.url));
+  }
+
+
+  if(pathName == '/'){
+    return NextResponse.redirect(new URL("/dashboard", request.url));
   }
 
   if (isAuthRoute || isPasswordRoute) {
